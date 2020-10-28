@@ -1,0 +1,531 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>Intro &mdash; KoSpeech 0.0 documentation</title>
+  
+
+  
+  
+  
+  
+
+  
+  <script type="text/javascript" src="../_static/js/modernizr.min.js"></script>
+  
+    
+      <script type="text/javascript" id="documentation_options" data-url_root="../" src="../_static/documentation_options.js"></script>
+        <script type="text/javascript" src="../_static/jquery.js"></script>
+        <script type="text/javascript" src="../_static/underscore.js"></script>
+        <script type="text/javascript" src="../_static/doctools.js"></script>
+    
+    <script type="text/javascript" src="../_static/js/theme.js"></script>
+
+    
+
+  
+  <link rel="stylesheet" href="../_static/css/theme.css" type="text/css" />
+  <link rel="stylesheet" href="../_static/pygments.css" type="text/css" />
+    <link rel="index" title="Index" href="../genindex.html" />
+    <link rel="search" title="Search" href="../search.html" />
+    <link rel="next" title="Preparation before Training" href="Preparation.html" />
+    <link rel="prev" title="Welcome to KoSpeech’s documentation!" href="../index.html" /> 
+</head>
+
+<body class="wy-body-for-nav">
+
+   
+  <div class="wy-grid-for-nav">
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+          
+
+          
+            <a href="../index.html" class="icon icon-home"> KoSpeech
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+              
+            
+            
+              <p class="caption"><span class="caption-text">NOTES</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Intro</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#id1">Intro</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#features">Features</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#roadmap">Roadmap</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#seq2seq">Seq2seq</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#transformer">Transformer</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#various-options">Various Options</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#kospeech">KoSpeech</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#installation">Installation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#prerequisites">Prerequisites</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#install-from-source">Install from source</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#get-started">Get Started</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#step-1-data-preprocessing">Step 1: Data Preprocessing</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-2-run-main-py">Step 2: Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#step-3-run-eval-py">Step 3: Run <code class="docutils literal notranslate"><span class="pre">eval.py</span></code></a></li>
+<li class="toctree-l3"><a class="reference internal" href="#checkpoints">Checkpoints</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="#troubleshoots-and-contributing">Troubleshoots and Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="#todo-list">TODO List</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#code-style">Code Style</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#paper-references">Paper References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#github-references">Github References</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#citing">Citing</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="Preparation.html">Preparation before Training</a></li>
+<li class="toctree-l1"><a class="reference internal" href="opts.html">Options</a></li>
+</ul>
+<p class="caption"><span class="caption-text">ARCHITECTURE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Seq2seq.html">Seq2seq</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Transformer.html">Transformer</a></li>
+</ul>
+<p class="caption"><span class="caption-text">PACKAGE REFERENCE</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../Checkpoint.html">Checkpoint</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Data.html">Data</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Decode.html">Decode</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Evaluator.html">Evaluator</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Optim.html">Optim</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Trainer.html">Trainer</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../Etc.html">Etc</a></li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" aria-label="top navigation">
+        
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../index.html">KoSpeech</a>
+        
+      </nav>
+
+
+      <div class="wy-nav-content">
+        
+        <div class="rst-content">
+        
+          
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+
+  <ul class="wy-breadcrumbs">
+    
+      <li><a href="../index.html">Docs</a> &raquo;</li>
+        
+      <li>Intro</li>
+    
+    
+      <li class="wy-breadcrumbs-aside">
+        
+            
+            <a href="../_sources/notes/intro.md.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+    
+  </ul>
+
+  
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <div class="section" id="intro">
+<h1>Intro<a class="headerlink" href="#intro" title="Permalink to this headline">¶</a></h1>
+<p><a class="reference external" href="https://sooftware.github.io/KoSpeech/">KoSpeech: Open Source Project for Korean End-to-End Automatic Speech Recognition in PyTorch</a></p>
+<p><a class="reference external" href="https://github.com/sooftware">Soohwan Kim</a><sup>1,2</sup>, <a class="reference external" href="https://github.com/triplet02">Seyoung Bae</a><sup>1</sup>, <a class="reference external" href="https://github.com/wch18735">Cheolhwang Won</a><sup>1</sup>, <a class="reference external" href="https://ei.kw.ac.kr/introduction/professor_view.php?idx=72">Suwon Park</a><sup>1*</sup></p>
+<p><sup>1</sup>Elcomm, Kwangwoon Univ. <sup>2</sup>Spoken Language Lab (of Sogang Univ.) <sup>*</sup> author is advisor to this work</p>
+<p><code class="docutils literal notranslate"><span class="pre">KoSpeech</span></code> is an End-to-End open source project for Korean speech recognition. The goal of this work is to help research speech recognition. It was developed with a focus on readability and extensibility of code. Learning is possible through various options such as feature extraction, attention mechanism, and data augmentation, etc..<br />We used <code class="docutils literal notranslate"><span class="pre">KsponSpeech</span></code> corpus which containing <strong>1000h</strong> of Korean speech data. At present our model has recorded an <strong>89.69%</strong> character recognition rate. We are always updating this work for increased recognition rate and extensibility.<br />We appreciate any kind of <a class="reference external" href="https://github.com/sooftware/End-to-end-Speech-Recognition/issues">feedback or contribution</a>.</p>
+<p><a class="reference external" href="https://github.com/sooftware/KoSpeech/blob/master/docs/README_ko">Korean.ver</a></p>
+<div class="section" id="id1">
+<h2>Intro<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<p>End-to-end (E2E) automatic speech recognition (ASR) is an emerging paradigm in the field of neural network-based speech recognition that offers multiple benefits. Traditional “hybrid” ASR systems, which are comprised of an acoustic model, language model, and pronunciation model, require separate training of these components, each of which can be complex.</p>
+<p>For example, training of an acoustic model is a multi-stage process of model training and time alignment between the speech acoustic feature sequence and output label sequence. In contrast, E2E ASR is a single integrated approach with a much simpler training pipeline with models that operate at low audio frame rates. This reduces the training time, decoding time, and allows joint optimization with downstream processing such as natural language understanding.</p>
+</div>
+<div class="section" id="features">
+<h2>Features<a class="headerlink" href="#features" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/">End-to-end (E2E) automatic speech recognition</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/notes/opts.html">Various Options</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Seq2seq.html#module-kospeech.models.seq2seq.sublayers">(VGG / DeepSpeech2) Extractor</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Seq2seq.html#module-kospeech.models.seq2seq.sublayers">MaskCNN &amp; pack_padded_sequence</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Seq2seq.html#module-kospeech.models.seq2seq.attention">Attention (Multi-Head / Location-Aware / Additive / Scaled-dot)</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Seq2seq.html#module-kospeech.models.seq2seq.beam_search">Top K Decoding (Beam Search)</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Data.html#module-kospeech.data.audio.feature">Various Feature (Spectrogram / Mel-Spectrogram / MFCC / Filter-Bank)</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Data.html#module-kospeech.data.audio.core">Delete silence</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Data.html#module-kospeech.data.audio.augment">SpecAugment / NoiseAugment</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Optim.html#module-kospeech.optim.loss">Label Smoothing</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Checkpoint.html#id1">Save &amp; load Checkpoint</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Optim.html#module-kospeech.optim.lr_scheduler">Learning Rate Scheduling</a></li>
+<li><a class="reference external" href="https://sooftware.github.io/KoSpeech/Data.html#module-kospeech.data.data_loader">Implement data loader as multi-thread for speed</a></li>
+<li>Scheduled Sampling (Teacher forcing scheduling)</li>
+<li>Inference with batching</li>
+<li>Multi-GPU training</li>
+</ul>
+<p>We have referred to several papers to develop the best model possible. And tried to make the code as efficient and easy to use as possible. If you have any minor inconvenience, please let us know anytime.<br />We will response as soon as possible.</p>
+</div>
+<div class="section" id="roadmap">
+<h2>Roadmap<a class="headerlink" href="#roadmap" title="Permalink to this headline">¶</a></h2>
+<img src="https://user-images.githubusercontent.com/42150335/87572553-afb7a200-c706-11ea-9b5e-cd7b6b832f01.png"> <div class="section" id="seq2seq">
+<h3>Seq2seq<a class="headerlink" href="#seq2seq" title="Permalink to this headline">¶</a></h3>
+<p>Sequence-to-Sequence can be trained with serveral options. You can choose the CNN extractor from (<code class="docutils literal notranslate"><span class="pre">ds2</span></code> /<code class="docutils literal notranslate"><span class="pre">vgg</span></code>),<br />You can choose attention mechanism from (<code class="docutils literal notranslate"><span class="pre">location-aware</span></code>, <code class="docutils literal notranslate"><span class="pre">multi-head</span></code>, <code class="docutils literal notranslate"><span class="pre">additive</span></code>, <code class="docutils literal notranslate"><span class="pre">scaled-dot</span></code>) attention.</p>
+<p>Our architecture based on Listen Attend and Spell.<br />We mainly referred to following papers.</p>
+<p><a class="reference external" href="https://arxiv.org/abs/1508.01211">Wiliam Chan et al.「Listen, Attend and Spell」ICASSP 2016</a></p>
+<p><a class="reference external" href="https://arxiv.org/abs/1706.03762">Ashish Vaswani et al 「Attention Is All You Need」 NIPS 2017
+</a></p>
+<p><a class="reference external" href="https://arxiv.org/abs/1712.01769">Chiu et al 「StateOf-The-Art Speech Recognition with Sequence-to-Sequence Models」 ICASSP 2018
+</a></p>
+<p><a class="reference external" href="https://arxiv.org/abs/1904.08779">Daniel S. Park et al 「SpecAugment: A Simple Data Augmentation Method for ASR」 Interspeech 2019
+</a></p>
+<p>Our Seq2seq architeuture is as follows.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">Seq2seq</span><span class="p">(</span>
+  <span class="p">(</span><span class="n">encoder</span><span class="p">):</span> <span class="n">Seq2seqEncoder</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">conv</span><span class="p">):</span> <span class="n">VGGExtractor</span><span class="p">(</span>
+      <span class="p">(</span><span class="n">conv</span><span class="p">):</span> <span class="n">Sequential</span><span class="p">(</span>
+        <span class="p">(</span><span class="mi">0</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">1</span><span class="p">):</span> <span class="n">Hardtanh</span><span class="p">(</span><span class="n">min_val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_val</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">2</span><span class="p">):</span> <span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-05</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">track_running_stats</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">3</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">64</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">4</span><span class="p">):</span> <span class="n">Hardtanh</span><span class="p">(</span><span class="n">min_val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_val</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">5</span><span class="p">):</span> <span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dilation</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ceil_mode</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">6</span><span class="p">):</span> <span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-05</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">track_running_stats</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">7</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">64</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">8</span><span class="p">):</span> <span class="n">Hardtanh</span><span class="p">(</span><span class="n">min_val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_val</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">9</span><span class="p">):</span> <span class="n">BatchNorm2d</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="n">eps</span><span class="o">=</span><span class="mf">1e-05</span><span class="p">,</span> <span class="n">momentum</span><span class="o">=</span><span class="mf">0.1</span><span class="p">,</span> <span class="n">affine</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">track_running_stats</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">10</span><span class="p">):</span> <span class="n">Conv2d</span><span class="p">(</span><span class="mi">128</span><span class="p">,</span> <span class="mi">128</span><span class="p">,</span> <span class="n">kernel_size</span><span class="o">=</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="n">stride</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">padding</span><span class="o">=</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">11</span><span class="p">):</span> <span class="n">Hardtanh</span><span class="p">(</span><span class="n">min_val</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">max_val</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="p">(</span><span class="mi">12</span><span class="p">):</span> <span class="n">MaxPool2d</span><span class="p">(</span><span class="n">kernel_size</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">stride</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">padding</span><span class="o">=</span><span class="mi">0</span><span class="p">,</span> <span class="n">dilation</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">ceil_mode</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+      <span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(</span><span class="n">rnn</span><span class="p">):</span> <span class="n">LSTM</span><span class="p">(</span><span class="mi">2560</span><span class="p">,</span> <span class="mi">512</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">3</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">bidirectional</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+  <span class="p">)</span>
+  <span class="p">(</span><span class="n">decoder</span><span class="p">):</span> <span class="n">Seq2seqDecoder</span><span class="p">(</span>
+    <span class="p">(</span><span class="n">embedding</span><span class="p">):</span> <span class="n">Embedding</span><span class="p">(</span><span class="mi">2038</span><span class="p">,</span> <span class="mi">1024</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">input_dropout</span><span class="p">):</span> <span class="n">Dropout</span><span class="p">(</span><span class="n">p</span><span class="o">=</span><span class="mf">0.3</span><span class="p">,</span> <span class="n">inplace</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">rnn</span><span class="p">):</span> <span class="n">LSTM</span><span class="p">(</span><span class="mi">1024</span><span class="p">,</span> <span class="mi">1024</span><span class="p">,</span> <span class="n">num_layers</span><span class="o">=</span><span class="mi">2</span><span class="p">,</span> <span class="n">batch_first</span><span class="o">=</span><span class="bp">True</span><span class="p">,</span> <span class="n">dropout</span><span class="o">=</span><span class="mf">0.3</span><span class="p">)</span>
+    <span class="p">(</span><span class="n">attention</span><span class="p">):</span> <span class="n">AddNorm</span><span class="p">(</span>
+      <span class="p">(</span><span class="n">sublayer</span><span class="p">):</span> <span class="n">MultiHeadAttention</span><span class="p">(</span>
+        <span class="p">(</span><span class="n">query_proj</span><span class="p">):</span> <span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">key_proj</span><span class="p">):</span> <span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+        <span class="p">(</span><span class="n">value_proj</span><span class="p">):</span> <span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+      <span class="p">)</span>
+      <span class="p">(</span><span class="n">layer_norm</span><span class="p">):</span> <span class="n">LayerNorm</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(</span><span class="n">projection</span><span class="p">):</span> <span class="n">AddNorm</span><span class="p">(</span>
+      <span class="p">(</span><span class="n">sublayer</span><span class="p">):</span> <span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">True</span><span class="p">)</span>
+      <span class="p">(</span><span class="n">layer_norm</span><span class="p">):</span> <span class="n">LayerNorm</span><span class="p">(</span><span class="mi">1024</span><span class="p">)</span>
+    <span class="p">)</span>
+    <span class="p">(</span><span class="n">generator</span><span class="p">):</span> <span class="n">Linear</span><span class="p">(</span><span class="n">in_features</span><span class="o">=</span><span class="mi">1024</span><span class="p">,</span> <span class="n">out_features</span><span class="o">=</span><span class="mi">2038</span><span class="p">,</span> <span class="n">bias</span><span class="o">=</span><span class="bp">False</span><span class="p">)</span>
+  <span class="p">)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="transformer">
+<h3>Transformer<a class="headerlink" href="#transformer" title="Permalink to this headline">¶</a></h3>
+<p>The Transformer model is currently implemented, but the code for learning is not implemented.<br />We will implement as soon as possible.</p>
+<p>We mainly referred to following papers.</p>
+<p><a class="reference external" href="https://arxiv.org/abs/1706.03762">Ashish Vaswani et al 「Attention Is All You Need」 NIPS 2017
+</a></p>
+</div>
+<div class="section" id="various-options">
+<h3>Various Options<a class="headerlink" href="#various-options" title="Permalink to this headline">¶</a></h3>
+<p>You can choose feature extraction method from (<code class="docutils literal notranslate"><span class="pre">spectrogram</span></code>, <code class="docutils literal notranslate"><span class="pre">mel-spectrogram</span></code>, <code class="docutils literal notranslate"><span class="pre">mfcc</span></code>, <code class="docutils literal notranslate"><span class="pre">filter-bank</span></code>).<br />In addition to this, You can see a variety of options <a class="reference external" href="https://sooftware.github.io/KoSpeech/notes/opts.html">here</a>.</p>
+<ul class="simple">
+<li>Options</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">usage</span><span class="p">:</span> <span class="n">main</span><span class="o">.</span><span class="n">py</span> <span class="p">[</span><span class="o">-</span><span class="n">h</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">mode</span> <span class="n">MODE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">sample_rate</span> <span class="n">SAMPLE_RATE</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">frame_length</span> <span class="n">FRAME_LENGTH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">frame_shift</span> <span class="n">FRAME_SHIFT</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">n_mels</span> <span class="n">N_MELS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">normalize</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">del_silence</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">input_reverse</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">feature_extract_by</span> <span class="n">FEATURE_EXTRACT_BY</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">transform_method</span> <span class="n">TRANSFORM_METHOD</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">time_mask_para</span> <span class="n">TIME_MASK_PARA</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">freq_mask_para</span> <span class="n">FREQ_MASK_PARA</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">time_mask_num</span> <span class="n">TIME_MASK_NUM</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">freq_mask_num</span> <span class="n">FREQ_MASK_NUM</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">architecture</span> <span class="n">ARCHITECTURE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">use_bidirectional</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">mask_conv</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">hidden_dim</span> <span class="n">HIDDEN_DIM</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">dropout</span> <span class="n">DROPOUT</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">num_heads</span> <span class="n">NUM_HEADS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">label_smoothing</span> <span class="n">LABEL_SMOOTHING</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">num_encoder_layers</span> <span class="n">NUM_ENCODER_LAYERS</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">num_decoder_layers</span> <span class="n">NUM_DECODER_LAYERS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">rnn_type</span> <span class="n">RNN_TYPE</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">extractor</span> <span class="n">EXTRACTOR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">activation</span> <span class="n">ACTIVATION</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">attn_mechanism</span> <span class="n">ATTN_MECHANISM</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">teacher_forcing_ratio</span> <span class="n">TEACHER_FORCING_RATIO</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">num_classes</span> <span class="n">NUM_CLASSES</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">d_model</span> <span class="n">D_MODEL</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">ffnet_style</span> <span class="n">FFNET_STYLE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">dataset_path</span> <span class="n">DATASET_PATH</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">data_list_path</span> <span class="n">DATA_LIST_PATH</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">label_path</span> <span class="n">LABEL_PATH</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">spec_augment</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">noise_augment</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">noiseset_size</span> <span class="n">NOISESET_SIZE</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">noise_level</span> <span class="n">NOISE_LEVEL</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">use_cuda</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">batch_size</span> <span class="n">BATCH_SIZE</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">num_workers</span> <span class="n">NUM_WORKERS</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">num_epochs</span> <span class="n">NUM_EPOCHS</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">init_lr</span> <span class="n">INIT_LR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">high_plateau_lr</span> <span class="n">HIGH_PLATEAU_LR</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">low_plateau_lr</span> <span class="n">LOW_PLATEAU_LR</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">valid_ratio</span> <span class="n">VALID_RATIO</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">max_len</span> <span class="n">MAX_LEN</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">max_grad_norm</span> <span class="n">MAX_GRAD_NORM</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">rampup_period</span> <span class="n">RAMPUP_PERIOD</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">decay_threshold</span> <span class="n">DECAY_THRESHOLD</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">exp_decay_period</span> <span class="n">EXP_DECAY_PERIOD</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">teacher_forcing_step</span> <span class="n">TEACHER_FORCING_STEP</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">min_teacher_forcing_ratio</span> <span class="n">MIN_TEACHER_FORCING_RATIO</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">seed</span> <span class="n">SEED</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">save_result_every</span> <span class="n">SAVE_RESULT_EVERY</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">checkpoint_every</span> <span class="n">CHECKPOINT_EVERY</span><span class="p">]</span>
+               <span class="p">[</span><span class="o">--</span><span class="n">print_every</span> <span class="n">PRINT_EVERY</span><span class="p">]</span> <span class="p">[</span><span class="o">--</span><span class="n">resume</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="section" id="kospeech">
+<h3>KoSpeech<a class="headerlink" href="#kospeech" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">kospeech</span></code> module has modularized and extensible components for las models, trainer, evaluator, checkpoints etc…<br />In addition, <code class="docutils literal notranslate"><span class="pre">kospeech</span></code> enables learning in a variety of environments with a simple option setting.</p>
+<p>We are constantly updating the progress of the project on the <a class="reference external" href="https://github.com/sooftware/End-to-end-Speech-Recognition/wiki">Wiki page</a>.  Please check this page.</p>
+</div>
+</div>
+<div class="section" id="installation">
+<h2>Installation<a class="headerlink" href="#installation" title="Permalink to this headline">¶</a></h2>
+<p>This project recommends Python 3.7 or higher.<br />We recommend creating a new virtual environment for this project (using virtual env or conda).</p>
+<div class="section" id="prerequisites">
+<h3>Prerequisites<a class="headerlink" href="#prerequisites" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Numpy: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">numpy</span></code> (Refer <a class="reference external" href="https://github.com/numpy/numpy">here</a> for problem installing Numpy).</li>
+<li>Pytorch: Refer to <a class="reference external" href="http://pytorch.org/">PyTorch website</a> to install the version w.r.t. your environment.</li>
+<li>Pandas: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">pandas</span></code> (Refer <a class="reference external" href="https://github.com/pandas-dev/pandas">here</a> for problem installing Pandas)</li>
+<li>Matplotlib: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">matplotlib</span></code> (Refer <a class="reference external" href="https://github.com/matplotlib/matplotlib">here</a> for problem installing Matplotlib)</li>
+<li>librosa: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">librosa</span></code> (Refer <a class="reference external" href="https://github.com/librosa/librosa">here</a> for problem installing librosa)</li>
+<li>torchaudio: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">torchaudio</span></code> (Refer <a class="reference external" href="https://github.com/pytorch/pytorch">here</a> for problem installing torchaudio)</li>
+<li>tqdm: <code class="docutils literal notranslate"><span class="pre">pip</span> <span class="pre">install</span> <span class="pre">tqdm</span></code> (Refer <a class="reference external" href="https://github.com/tqdm/tqdm">here</a> for problem installing tqdm)</li>
+</ul>
+</div>
+<div class="section" id="install-from-source">
+<h3>Install from source<a class="headerlink" href="#install-from-source" title="Permalink to this headline">¶</a></h3>
+<p>Currently we only support installation from source code using setuptools. Checkout the source code and run the<br />following commands:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">-</span><span class="n">r</span> <span class="n">requirements</span><span class="o">.</span><span class="n">txt</span>
+</pre></div>
+</div>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="nb">bin</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">build</span>
+<span class="n">python</span> <span class="nb">bin</span><span class="o">/</span><span class="n">setup</span><span class="o">.</span><span class="n">py</span> <span class="n">install</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="get-started">
+<h2>Get Started<a class="headerlink" href="#get-started" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="step-1-data-preprocessing">
+<h3>Step 1: Data Preprocessing<a class="headerlink" href="#step-1-data-preprocessing" title="Permalink to this headline">¶</a></h3>
+<p>you can preprocess <code class="docutils literal notranslate"><span class="pre">KsponSpeech</span> <span class="pre">corpus</span></code> refer <a class="reference external" href="https://github.com/sooftware/KoSpeech/wiki/Preparation-before-Training">wiki</a> or <a class="reference external" href="https://github.com/sooftware/KsponSpeech-preprocess">this repo</a>.<br />This documentation contains information regarding the preprocessing of <code class="docutils literal notranslate"><span class="pre">KsponSpeech</span></code>.</p>
+</div>
+<div class="section" id="step-2-run-main-py">
+<h3>Step 2: Run <code class="docutils literal notranslate"><span class="pre">main.py</span></code><a class="headerlink" href="#step-2-run-main-py" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Default setting</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./run.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li>Custom setting</li>
+</ul>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>python ./bin/main.py -batch_size <span class="m">32</span> -num_workers <span class="m">4</span> -num_epochs <span class="m">20</span>  -spec_augment
+</pre></div>
+</div>
+<p>You can train the model by above command.<br />If you want to train by default setting, you can train by <code class="docutils literal notranslate"><span class="pre">Defaulting</span> <span class="pre">setting</span></code> command.<br />Or if you want to train by custom setting, you can designate hyperparameters by <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">setting</span></code> command.</p>
+</div>
+<div class="section" id="step-3-run-eval-py">
+<h3>Step 3: Run <code class="docutils literal notranslate"><span class="pre">eval.py</span></code><a class="headerlink" href="#step-3-run-eval-py" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li>Default setting</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>$ ./eval.sh
+</pre></div>
+</div>
+<ul class="simple">
+<li>Custom setting</li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="o">./</span><span class="nb">bin</span><span class="o">/</span><span class="nb">eval</span><span class="o">.</span><span class="n">py</span> <span class="o">-</span><span class="n">dataset_path</span> <span class="n">dataset_path</span> <span class="o">-</span><span class="n">data_list_path</span> <span class="n">data_list_path</span> <span class="o">-</span><span class="n">mode</span> <span class="nb">eval</span>
+</pre></div>
+</div>
+<p>Now you have a model which you can use to predict on new data. We do this by running <code class="docutils literal notranslate"><span class="pre">greedy</span> <span class="pre">search</span></code> or <code class="docutils literal notranslate"><span class="pre">beam</span> <span class="pre">search</span></code>.<br />Like training, you can choose between <code class="docutils literal notranslate"><span class="pre">Default</span> <span class="pre">setting</span></code> or <code class="docutils literal notranslate"><span class="pre">Custom</span> <span class="pre">setting</span></code>.</p>
+</div>
+<div class="section" id="checkpoints">
+<h3>Checkpoints<a class="headerlink" href="#checkpoints" title="Permalink to this headline">¶</a></h3>
+<p>Checkpoints are organized by experiments and timestamps as shown in the following file structure.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">save_dir</span>
+<span class="o">+--</span> <span class="n">checkpoints</span>
+<span class="o">|</span>  <span class="o">+--</span> <span class="n">YYYY_mm_dd_HH_MM_SS</span>
+   <span class="o">|</span>  <span class="o">+--</span> <span class="n">trainer_states</span><span class="o">.</span><span class="n">pt</span>
+   <span class="o">|</span>  <span class="o">+--</span> <span class="n">model</span><span class="o">.</span><span class="n">pt</span>
+</pre></div>
+</div>
+<p>You can resume and load from checkpoints.</p>
+</div>
+</div>
+<div class="section" id="troubleshoots-and-contributing">
+<h2>Troubleshoots and Contributing<a class="headerlink" href="#troubleshoots-and-contributing" title="Permalink to this headline">¶</a></h2>
+<p>If you have any questions, bug reports, and feature requests, please <a class="reference external" href="https://github.com/sooftware/End-to-end-Speech-Recognition/issues">open an issue</a> on Github.<br />For live discussions, please go to our <a class="reference external" href="https://gitter.im/Korean-Speech-Recognition/community">gitter</a> or Contacts sh951011&#64;gmail.com please.</p>
+<p>We appreciate any kind of feedback or contribution.  Feel free to proceed with small issues like bug fixes, documentation improvement.  For major contributions and new features, please discuss with the collaborators in corresponding issues.</p>
+</div>
+<div class="section" id="todo-list">
+<h2>TODO List<a class="headerlink" href="#todo-list" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li>[X] Add Transformer model</li>
+<li>[ ] Train with Transformer model</li>
+<li>[ ] Inference with Transformer model</li>
+<li>[ ] Add CTC with beam search (Connectionist Temporal Classification)</li>
+</ul>
+<div class="section" id="code-style">
+<h3>Code Style<a class="headerlink" href="#code-style" title="Permalink to this headline">¶</a></h3>
+<p>We follow <a class="reference external" href="https://www.python.org/dev/peps/pep-0008/">PEP-8</a> for code style. Especially the style of docstrings is important to generate documentation.</p>
+</div>
+<div class="section" id="paper-references">
+<h3>Paper References<a class="headerlink" href="#paper-references" title="Permalink to this headline">¶</a></h3>
+<p>Ilya Sutskever et al. <a class="reference external" href="https://arxiv.org/abs/1409.3215">Sequence to Sequence Learning with Neural Networks</a> arXiv: 1409.3215</p>
+<p>Dzmitry Bahdanau et al. <a class="reference external" href="https://arxiv.org/abs/1409.0473">Neural Machine Translation by Jointly Learning to Align and Translate</a> arXiv: 1409.0473</p>
+<p>Jan Chorowski et al. <a class="reference external" href="https://arxiv.org/abs/1506.07503">Attention Based Models for Speech Recognition</a> arXiv: 1506.07503</p>
+<p>Wiliam Chan et al. <a class="reference external" href="https://arxiv.org/abs/1508.01211">Listen, Attend and Spell</a> arXiv: 1508.01211</p>
+<p>Dario Amodei et al. <a class="reference external" href="https://arxiv.org/abs/1512.02595">Deep Speech2: End-to-End Speech Recognition in English and Mandarin</a> arXiv: 1512.02595</p>
+<p>Takaaki Hori et al. <a class="reference external" href="https://arxiv.org/abs/1706.02737">Advances in Joint CTC-Attention based E2E Automatic Speech Recognition with a Deep CNN Encoder and RNN-LM</a> arXiv: 1706.02737</p>
+<p>Ashish Vaswani et al. <a class="reference external" href="https://arxiv.org/abs/1706.03762">Attention Is All You Need</a> arXiv: 1706.03762</p>
+<p>Chung-Cheng Chiu et al. <a class="reference external" href="https://arxiv.org/abs/1712.01769">State-of-the-art Speech Recognition with Sequence-to-Sequence Models</a> arXiv: 1712.01769</p>
+<p>Anjuli Kannan et al. <a class="reference external" href="https://arxiv.org/abs/1712.01996">An Analysis Of Incorporating An External LM Into A Sequence-to-Sequence Model</a> arXiv: 1712.01996</p>
+<p>Daniel S. Park et al. <a class="reference external" href="https://arxiv.org/abs/1904.08779">SpecAugment: A Simple Data Augmentation Method for Automatic Speech Recognition</a> arXiv: 1904.08779</p>
+<p>Rafael Muller et al. <a class="reference external" href="https://arxiv.org/abs/1906.02629">When Does Label Smoothing Help?</a> arXiv: 1906.02629</p>
+<p>Jung-Woo Ha et al. <a class="reference external" href="https://arxiv.org/abs/2004.09367">ClovaCall: Korean Goal-Oriented Dialog Speech Corpus for Automatic Speech Recognition of Contact Centers</a> arXiv: 2004.09367</p>
+</div>
+<div class="section" id="github-references">
+<h3>Github References<a class="headerlink" href="#github-references" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://github.com/IBM/pytorch-seq2seq">IBM/Pytorch-seq2seq</a></p>
+<p><a class="reference external" href="https://github.com/SeanNaren/deepspeech.pytorch">SeanNaren/deepspeech.pytorch</a></p>
+<p><a class="reference external" href="https://github.com/kaituoxu/Speech-Transformer">kaituoxu/Speech-Transformer</a></p>
+<p><a class="reference external" href="https://github.com/OpenNMT/OpenNMT-py">OpenNMT/OpenNMT-py</a></p>
+<p><a class="reference external" href="https://github.com/clovaai/ClovaCall">clovaai/ClovaCall</a></p>
+</div>
+<div class="section" id="citing">
+<h3>Citing<a class="headerlink" href="#citing" title="Permalink to this headline">¶</a></h3>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="nd">@github</span><span class="p">{</span>
+  <span class="n">title</span> <span class="o">=</span> <span class="p">{</span><span class="n">KoSpeech</span><span class="p">:</span> <span class="n">Open</span> <span class="n">Source</span> <span class="n">Project</span> <span class="k">for</span> <span class="n">Korean</span> <span class="n">End</span><span class="o">-</span><span class="n">to</span><span class="o">-</span><span class="n">End</span> <span class="n">Automatic</span> <span class="n">Speech</span> <span class="n">Recognition</span> <span class="ow">in</span> <span class="n">PyTorch</span><span class="p">},</span>
+  <span class="n">author</span> <span class="o">=</span> <span class="p">{</span><span class="n">Soohwan</span> <span class="n">Kim</span><span class="p">,</span> <span class="n">Seyoung</span> <span class="n">Bae</span><span class="p">,</span> <span class="n">Cheolhwang</span> <span class="n">Won</span><span class="p">,</span> <span class="n">Suwon</span> <span class="n">Park</span><span class="p">},</span>
+  <span class="n">publisher</span> <span class="o">=</span> <span class="p">{</span><span class="n">GitHub</span><span class="p">},</span>
+  <span class="n">docs</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">sooftware</span><span class="o">.</span><span class="n">github</span><span class="o">.</span><span class="n">io</span><span class="o">/</span><span class="n">KoSpeech</span><span class="o">/</span><span class="p">},</span>
+  <span class="n">url</span> <span class="o">=</span> <span class="p">{</span><span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">sooftware</span><span class="o">/</span><span class="n">KoSpeech</span><span class="p">},</span>
+  <span class="n">year</span> <span class="o">=</span> <span class="p">{</span><span class="mi">2020</span><span class="p">}</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+
+           </div>
+           
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+        <a href="Preparation.html" class="btn btn-neutral float-right" title="Preparation before Training" accesskey="n" rel="next">Next <span class="fa fa-arrow-circle-right"></span></a>
+      
+      
+        <a href="../index.html" class="btn btn-neutral float-left" title="Welcome to KoSpeech’s documentation!" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2020, Soohwan Kim
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/rtfd/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script>
+
+  
+  
+    
+   
+
+</body>
+</html>

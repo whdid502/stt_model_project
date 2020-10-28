@@ -1,0 +1,1 @@
+python prepare-kspon.py --dataset_path C:\Users\ansdu\Desktop\KsponSpeech\original --vocab_dest C:\Users\ansdu\Desktop\KsponSpeech --preprocess_mode spelling
